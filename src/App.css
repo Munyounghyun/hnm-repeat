@@ -81,6 +81,11 @@ input{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 10px;
+}
+.card:hover{
+    transform: scale(1.03);
+    transition: all 0.3s ease-in-out;
 }
 .card_info{
     display: flex;
@@ -131,4 +136,39 @@ input{
     margin-top: 20px;
     font-size: 17px;
     height: 30px;
+}
+
+
+/*detail*/
+.detail{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+.detail_wrap{
+    width: 700px;
+    display: flex;
+    justify-content: space-around;
+}
+.detail_info{
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+}
+.detail_info button{
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(129, 129, 239);
+    color: white;
+    height: 30px;
+}
+.detail_info button:hover{
+    background-color:rgb(98, 98, 231) ;
+}
+.detail_item{
+    margin: 5px 0;
+}
+.detail_item:last-child{
+    cursor: pointer;
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -19,6 +19,18 @@ const Header = ({ auth }) => {
 
   const goLogin = () => {
     navigate("/login");
+  };
+
+  const search = (event) => {
+    let keyword = event.target.value;
+    navigate(`/?q=${keyword}`);
+  };
+
+  const goWoman = () => {
+    navigate("/?q=여성");
+  };
+  const goMan = () => {
+    navigate("/?q=남자");
   };
 
   return (
@@ -61,9 +73,9 @@ const Header = ({ auth }) => {
         </ul>
       </div>
       <ul className="navbar">
-        <li>여성</li>
+        <li onClick={goWoman}>여성</li>
         <li>Davided</li>
-        <li>남성</li>
+        <li onClick={goMan}>남성</li>
         <li>신생아/유아</li>
         <li>아동</li>
         <li>H&amp;M HOME</li>
@@ -72,7 +84,10 @@ const Header = ({ auth }) => {
         <li className="search_input">
           <a>
             <FontAwesomeIcon icon={faMagnifyingGlass} />
-            <input placeholder="제품검색" />
+            <input
+              placeholder="제품검색"
+              onKeyPress={(event) => search(event)}
+            />
           </a>
         </li>
       </ul>
